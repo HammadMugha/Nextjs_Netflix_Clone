@@ -2,32 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html, body{
+  @apply overflow-x-hidden
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+ @layer base{
+  body{
+    @apply relative text-white bg-[#141414]
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  header{
+    @apply py-4 px-5 fixed z-20 w-full 
   }
-}
+ } 
+
+ @layer components{
+  .flexBetween{
+    @apply flex justify-between items-center
+  }
+  .flexCenter{
+    @apply flex justify-center items-center
+  }
+  .flexEnd{
+    @apply flex justify-end items-center
+  }
+ }
+
+ .bg{
+  background: rgba(109, 109, 110, 0.7);
+ }
